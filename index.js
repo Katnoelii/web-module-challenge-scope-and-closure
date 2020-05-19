@@ -29,6 +29,7 @@ function processFirstItem(stringList, callback) {
  * 1. What is the difference between counter1 and counter2?
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ * Counter1 uses the closure, you can tell from the second function nested within the first.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
