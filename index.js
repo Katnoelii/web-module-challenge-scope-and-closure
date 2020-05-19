@@ -132,13 +132,13 @@ function scoreboard(inning,amtOfInnings) {
   };//end of away scores
   return scoreHome + '-' + scoreAway;
 }//End of scoreboard
-console.log(scoreboard(inning,1));
-console.log(scoreboard(inning,2));
-console.log(scoreboard(inning,3));
-console.log(scoreboard(inning,4));
-console.log(scoreboard(inning,5));
-console.log(scoreboard(inning,6));
-console.log(scoreboard(inning,7));
-console.log(scoreboard(inning,8));
-console.log(scoreboard(inning,9));
-console.log(scoreboard(inning,10));
+console.log("1st inning:" + scoreboard(inning,1));
+console.log("2nd inning:" + scoreboard(inning,2));
+console.log("3rd inning:" + scoreboard(inning,3));
+console.log("4th inning:" + scoreboard(inning,4));
+console.log("5th inning:" + scoreboard(inning,5));
+console.log("6th inning:" + scoreboard(inning,6));
+console.log("7th inning:" + scoreboard(inning,7));
+console.log("8th inning:" + scoreboard(inning,8));
+console.log("9th inning:" + scoreboard(inning,9));
+console.log("Final Score:" + scoreboard(inning,10));
