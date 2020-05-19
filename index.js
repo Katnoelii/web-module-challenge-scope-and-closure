@@ -118,8 +118,27 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(inning,scores) {
+function scoreboard(inning,amtOfInnings) {
+  let scoreHome = 0;
 
-}
+  for (let i=0; i <= amtOfInnings; i++){
+    scoreHome = inning() + scoreHome;
+  };//end of home scores
 
+  let scoreAway = 0;
 
+  for(let i=0; i <= amtOfInnings; i++){
+    scoreAway = inning() + scoreAway;
+  };//end of away scores
+  return scoreHome + '-' + scoreAway;
+}//End of scoreboard
+console.log(scoreboard(inning,1));
+console.log(scoreboard(inning,2));
+console.log(scoreboard(inning,3));
+console.log(scoreboard(inning,4));
+console.log(scoreboard(inning,5));
+console.log(scoreboard(inning,6));
+console.log(scoreboard(inning,7));
+console.log(scoreboard(inning,8));
+console.log(scoreboard(inning,9));
+console.log(scoreboard(inning,10));
