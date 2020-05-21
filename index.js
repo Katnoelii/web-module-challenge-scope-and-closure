@@ -27,11 +27,12 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * Counter1 is a closure.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * Counter1 uses the closure, you can tell from the second function nested within the first.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * Counter1 would be preferable if you have code that needs to be recalled later on within the nested functions.
+ * Counter2 would suffice if the code its being used for is not needed more than once.
 */
 
 // counter1 code
@@ -56,11 +57,12 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
+    return Math.round(Math.random() * 2);
+  }
 
-    /*Code Here*/
+console.log(inning());
 
-}
 
 /* Task 3: finalScore()
 
@@ -76,11 +78,24 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning,inningNum){
+  let scoreHome = 0;
 
-  /*Code Here*/
+  for (let i=0; i <= inningNum; i++){
+    scoreHome = inning() + scoreHome;
+  };
 
+  let scoreAway = 0;
+
+  for(let i=0; i<=inningNum; i++){
+    scoreAway = inning() + scoreAway;
+  };
+  return{"Home": scoreHome, "Away": scoreAway};
 }
+
+console.log(finalScore(inning,9));
+
+
 
 /* Task 4: 
 
@@ -103,8 +118,27 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function scoreboard(inning,amtOfInnings) {
+  let scoreHome = 0;
 
+  for (let i=0; i <= amtOfInnings; i++){
+    scoreHome = inning() + scoreHome;
+  };//end of home scores
 
+  let scoreAway = 0;
+
+  for(let i=0; i <= amtOfInnings; i++){
+    scoreAway = inning() + scoreAway;
+  };//end of away scores
+  return scoreHome + '-' + scoreAway;
+}//End of scoreboard
+console.log("1st inning:" + scoreboard(inning,1));
+console.log("2nd inning:" + scoreboard(inning,2));
+console.log("3rd inning:" + scoreboard(inning,3));
+console.log("4th inning:" + scoreboard(inning,4));
+console.log("5th inning:" + scoreboard(inning,5));
+console.log("6th inning:" + scoreboard(inning,6));
+console.log("7th inning:" + scoreboard(inning,7));
+console.log("8th inning:" + scoreboard(inning,8));
+console.log("9th inning:" + scoreboard(inning,9));
+console.log("Final Score:" + scoreboard(inning,10));
